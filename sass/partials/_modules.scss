@@ -1,0 +1,65 @@
+//  ==========================================================================
+//  Sass Modules for Style
+//  ==========================================================================
+
+	a, a:active, a:visited{
+		outline: none !important;
+		-moz-outline: none !important;
+		text-decoration: none !important;
+	}
+	
+	img{ height: auto !important; }
+	
+	body, html{
+		min-width: $default-min-width;
+	}
+	
+	body{
+	}
+	
+	.full-width{
+		float:left;
+		position: relative;
+		display: block;
+		width: 100%;
+	}
+	
+	.float-left{
+		float: left;
+		position: relative;
+		display: block;
+	}
+	
+	.float-right{
+		float: right;
+		display: block;
+		position: relative;
+	}
+	
+	.text-center{
+		text-align: center;
+	}
+	
+	.text-right{
+		text-align: right;
+	}
+	
+	.hide{
+		@include opacity(0);
+	}
+	
+	.clear-left{ clear: left; }
+	
+	a, h1, h2, h4{
+		-webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+	   	backface-visibility: hidden;
+	}
+
+//  ==========================================================================
+//  Load Addtl Modules
+//  ==========================================================================
+	@import 'grids';
+	
+//  ==========================================================================
+//  Themeatic Styles Below
+//  ==========================================================================
