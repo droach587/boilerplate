@@ -10,22 +10,23 @@
 //  ==========================================================================
 //  Base and Reset
 //  ==========================================================================
-	@import "partials/base";
-	@import "partials/normalize";
+	@import "base/base";
+	@import "base/normalize";
+	@import "base/globals";
+	@import "layout/grids";
 
 //  ==========================================================================
 //  Themeatic
 //  ==========================================================================
-	@import "modules/globals";
-	@import "vendor/foundation/foundation-icons";
-	@import "partials/modules";
+	
+	@import "modules/modules";
 
 //  ==========================================================================
 //  Responsive
 //  ==========================================================================
-	@import "partials/responsive";
+	@import "media-queries/responsive";
 
 //  ==========================================================================
 //  Print
 //  ==========================================================================
-	@import "partials/print";
+	@import "base/print";
