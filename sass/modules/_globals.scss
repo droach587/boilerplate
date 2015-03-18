@@ -18,7 +18,9 @@
 	
 	//Foundation 
 	@include font-face("foundation-icons", font-files("foundation-icons.eot","foundation-icons.ttf", "foundation-icons.woff"));
-
+	
+	//FontAwesome
+	@import '../vendor/fontawesome/font-awesome';
 	
 	//Default Font Families, Adjustments etc
 	$font-family-default: "Arial", "Helvetica", sans-serif !default;	
