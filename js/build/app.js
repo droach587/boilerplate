@@ -1,0 +1,63 @@
+/**
+ * Simple App JS Launcher
+ * deps: jQuery
+ * 
+ */
+ 
+if (window.jQuery) {  
+    $(document).ready(function(){
+        mainJs.init({});	
+    });
+} else {
+    console.log('jQuery Dependency is NOT Loaded, please check source');
+}
+
+var mainJs = (function () {
+ 		
+ 		/**
+ 		 * Avoid Console Errors
+ 		 *
+ 		 * 
+ 		 */
+		(function() {
+		    var method;
+		    var noop = function () {};
+		    var methods = [
+		        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+		        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+		        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+		        'timeStamp', 'trace', 'warn'
+		    ];
+		    var length = methods.length;
+		    var console = (window.console = window.console || {});
+		
+		    while (length--) {
+		        method = methods[length];
+		
+		        // Only stub undefined methods.
+		        if (!console[method]) {
+		            console[method] = noop;
+		        }
+		    }
+		}());
+ 		
+ 		
+ 		/**
+ 		 * Simple Init Function
+ 		 *
+ 		 * 
+ 		 */
+        function init() {
+            console.log('init pass');
+        }
+ 
+ 
+        /**
+         * Reveal All Methods here
+         *
+         * 
+         */
+        return {
+            init 	:	init
+        };
+})();
