@@ -1,0 +1,93 @@
+/*doc
+---
+title: Headings
+name: headings
+category: Content
+---
+
+These are the heading sizes that you can use site wide. To use these headings either use a native heading element or use the classes listed below:  
+
+Class                     | Size
+------------------------- | ----------------
+`.hdg`                    | Base Size 14px (default)
+`.hdg hdg--1`             | 72px
+`.hdg hdg--2`             | 48px
+`.hdg hdg--3`             | 30px
+`.hdg hdg--4`             | 18px
+`.hdg hdg--5`             | 14px
+
+
+```html_example_table
+<h1 class="hdg hdg--1">Make every moment memorable.</h1>
+<h2 class="hdg hdg--2">Make every moment memorable.</h2>
+<h3 class="hdg hdg--3">Make every moment memorable.</h3>
+<h4 class="hdg hdg--4">Make every moment memorable.</h4>
+<h5 class="hdg hdg--5">Make every moment memorable.</h5>
+```
+
+*/
+
+%hdg,
+.hdg{
+    font-family: $default-heading-family;
+    font-weight: normal;
+    color: $default-text-color;
+}
+
+$heading-slug: hdg !default;
+
+@for $i from 1 through 5 {
+
+    /*
+    *   Responsive definitions for splitting a heading element into different classes based on viewport
+    */
+    .#{$heading-slug}--medium-#{$i},
+    .#{$heading-slug}--small-#{$i} {
+      display: none;
+    }
+}
+
+@for $i from 1 through 5 {
+
+    .#{$heading-slug}--large-#{$i} {
+        display: block;
+    }
+}
+
+@for $i from 1 through 5 {
+
+    .#{$heading-slug}--#{$i},
+    .#{$heading-slug}--large-#{$i}{
+        @if $i == 1{
+            font-size: #{map-get($h1map, fontSize)};
+            line-height: #{map-get($h1map, lineHeight)};
+            letter-spacing: #{map-get($h1map, letterSpacing)};
+        }
+        @if $i == 2{
+           font-size: #{map-get($h2map, fontSize)};
+           line-height: #{map-get($h2map, lineHeight)};
+           letter-spacing: #{map-get($h2map, letterSpacing)};
+        }
+        @if $i == 3{
+           font-size: #{map-get($h3map, fontSize)};
+           line-height: #{map-get($h3map, lineHeight)};
+           letter-spacing: #{map-get($h3map, letterSpacing)};
+        }
+        @if $i == 4{
+           font-size: #{map-get($h4map, fontSize)};
+           line-height: #{map-get($h4map, lineHeight)};
+           letter-spacing: #{map-get($h4map, letterSpacing)};
+        }
+        @if $i == 5{
+          font-size: #{map-get($h5map, fontSize)}; 
+          line-height: #{map-get($h5map, lineHeight)};
+          letter-spacing: #{map-get($h5map, letterSpacing)};
+        }
+    }
+}
+
+.hdg-small-text{
+    @extend .hdg--5;
+    font-size: #{map-get($h5map, fontSize) - 1};
+    line-height: #{map-get($h5map, lineHeight) - 4};
+}

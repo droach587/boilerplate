@@ -1,11 +1,14 @@
 //  ==========================================================================
 //  Global style import Master File
 //  ==========================================================================
-
+    
+    //bundle exec compass compile
+    
 //  ==========================================================================
 //  Compass
 //  ==========================================================================
 	@import "compass";
+	@import "breakpoint";
 	
 //  ==========================================================================
 //  Base and Reset
@@ -13,13 +16,27 @@
 	@import "base/base";
 	@import "base/normalize";
 	@import "base/globals";
-	@import "layout/grids";
+	
+//  ==========================================================================
+//  Vendor 
+//  ==========================================================================
+    @import "vendor/foundation/foundation-icons";
+    @import "vendor/foundation/foundation";
+    @import "vendor/fontawesome/font-awesome";
 
 //  ==========================================================================
-//  Themeatic
+//  Components
 //  ==========================================================================
 	
-	@import "modules/modules";
+	@import "modules/content/headings/headings";
+	@import "modules/content/headings/media-queries/headings-959";
+	@import "modules/content/headings/media-queries/headings-640";
+	
+//  ==========================================================================
+//  Modules should be super specific, however, in the case of simple thematic sites
+//  Just use one clean file 
+//  ==========================================================================
+	@import "modules/layout/layout-general";
 
 //  ==========================================================================
 //  Responsive
@@ -30,3 +47,6 @@
 //  Print
 //  ==========================================================================
 	@import "base/print";
+	
+	
+	

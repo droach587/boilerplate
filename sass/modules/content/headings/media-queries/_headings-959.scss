@@ -1,0 +1,55 @@
+
+@include breakpoint($global-959){
+
+    $heading-slug: hdg !default;   
+
+    @for $i from 1 through 5 {
+
+        /*
+        *   Responsive definitions for splitting a heading element into different classes based on viewport
+        */
+        .#{$heading-slug}--large-#{$i},
+        .#{$heading-slug}--small-#{$i} {
+          display: none;
+        }
+    }
+
+    @for $i from 1 through 5 {
+
+        .#{$heading-slug}--medium-#{$i} {
+            display: block;
+        }
+    } 
+    
+    @for $i from 1 through 5 {
+
+        .#{$heading-slug}--#{$i},
+        .#{$heading-slug}--medium-#{$i} {
+            @if $i == 1{
+                font-size: #{map-get($h1map_959, fontSize)};
+                line-height: #{map-get($h1map_959, lineHeight)};
+                letter-spacing: #{map-get($h1map_959, letterSpacing)};
+            }
+            @if $i == 2{
+               font-size: #{map-get($h2map_959, fontSize)};
+               line-height: #{map-get($h2map_959, lineHeight)};
+               letter-spacing: #{map-get($h2map_959, letterSpacing)};
+            }
+            @if $i == 3{
+               font-size: #{map-get($h3map_959, fontSize)};
+               line-height: #{map-get($h3map_959, lineHeight)};
+               letter-spacing: #{map-get($h3map_959, letterSpacing)};
+            }
+            @if $i == 4{
+               font-size: #{map-get($h4map_959, fontSize)};
+               line-height: #{map-get($h4map_959, lineHeight)};
+               letter-spacing: #{map-get($h4map_959, letterSpacing)};
+            }
+            @if $i == 5{
+              font-size: #{map-get($h5map_959, fontSize)}; 
+              line-height: #{map-get($h5map_959, lineHeight)};
+              letter-spacing: #{map-get($h5map_959, letterSpacing)};
+            }
+        }
+    }
+}

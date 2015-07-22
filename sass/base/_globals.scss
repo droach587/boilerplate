@@ -16,19 +16,16 @@
 //  Fonts
 //  ==========================================================================
 	
-	//Foundation
-	//FontAwesome
-	@import "../vendor/foundation/foundation-icons";
-	@import '../vendor/fontawesome/font-awesome';
-	
-	
 	@include font-face("foundation-icons", font-files("foundation-icons.eot","foundation-icons.ttf", "foundation-icons.woff"));
-	
+    @include font-face("FontAwesome", font-files("fontawesome-webfont.eot", "fontawesome-webfont.ttf", "fontawesome-webfont.woff"));
 	
 	//Default Font Families, Adjustments etc
-	$font-family-default: "Arial", "Helvetica", sans-serif !default;	
+	$default-font-family: "Arial", "Helvetica", sans-serif !default;
+	$default-heading-family: $default-font-family;
 	$default-font-size: 		14px !default;
 	$default-light-height:		18px !default;
+	
+	$default-text-color: black;
 
 //  ==========================================================================
 //  Default Sizing 
@@ -36,10 +33,38 @@
 	
 	$default-min-width:			980px !default;
 	$default-min-height:		768px !default;
+	
 
 //  ==========================================================================
-//  Colors
+//  Breakpoints 
 //  ==========================================================================
+
+    $global-1024:   'screen' max-width 1024px;
+    $global-959:   'screen' max-width 959px;
+    $global-640:   'screen' max-width 640px;
+    $global-360:   'screen' max-width 360px;
+
+//  ==========================================================================
+//  Type
+//  ==========================================================================
+
+    $h1map: (fontSize: 72px, lineHeight: 86px, letterSpacing: -4px);
+    $h2map: (fontSize: 40px, lineHeight: 48px, letterSpacing: -3px);
+    $h3map: (fontSize: 30px, lineHeight: 42px, letterSpacing: -2px);
+    $h4map: (fontSize: 18px, lineHeight: 24px, letterSpacing: 0px);
+    $h5map: (fontSize: 14px, lineHeight: 22px, letterSpacing: 0px);
+    
+    $h1map_959: (fontSize: 65px, lineHeight: 74px, letterSpacing: -4px);
+    $h2map_959: (fontSize: 38px, lineHeight: 48px, letterSpacing: -3px);
+    $h3map_959: (fontSize: 30px, lineHeight: 42px, letterSpacing: -2px);
+    $h4map_959: (fontSize: 18px, lineHeight: 24px, letterSpacing: 0px);
+    $h5map_959: (fontSize: 14px, lineHeight: 22px, letterSpacing: 0px);
+    
+    $h1map_640: (fontSize: 42px, lineHeight: 54px, letterSpacing: -3px);
+    $h2map_640: (fontSize: 32px, lineHeight: 42px, letterSpacing: -2px);
+    $h3map_640: (fontSize: 26px, lineHeight: 34px, letterSpacing: -1px);
+    $h4map_640: (fontSize: 14px, lineHeight: 18px, letterSpacing: 0px);
+    $h5map_640: (fontSize: 14px, lineHeight: 18px, letterSpacing: 0px);
 
 
 //  ==========================================================================
