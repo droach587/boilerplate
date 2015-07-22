@@ -2,7 +2,7 @@
  * Simple App JS Launcher
  * deps: jQuery
  * 
- */
+ */  
  
 if (window.jQuery) {  
     $(document).ready(function(){
@@ -48,7 +48,7 @@ var mainJs = (function () {
  		 * 
  		 */
         function init() {
-            console.log('init pass');
+            console.log('init pass on bp');
         }
  
  

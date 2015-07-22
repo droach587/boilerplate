@@ -16,7 +16,10 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 src: 'js/build/app.js',
-                dest: 'js/build/app.min.js'
+                dest: 'js/build/app.min.js',
+                options: {
+                   banner: '/* HTML5 JS Boilerplate Five Design Build Date: ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
+                }
             }
         },
         compass: {                  // Task
@@ -28,10 +31,19 @@ module.exports = function(grunt) {
                 imagesPath: "img",
                 generatedImagesDir: 'img',
                 fontsPath: "css/fonts",
-                require: 'breakpoint',
-                watch: true
+                require: 'breakpoint'
                 }
             }
+        },
+        watch: {
+          scripts: {
+            files: ['js/*.js'],
+            tasks: ['concat', 'uglify']
+          },
+          styles: {
+              files: ['sass/styles.scss'],
+              tasks: ['compass']
+          }
         }
     });
 
@@ -39,8 +51,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', 'compass']);
+    grunt.registerTask('default', ['concat', 'uglify', 'watch']);
 
 };

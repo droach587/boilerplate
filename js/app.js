@@ -2,7 +2,7 @@
  * Simple App JS Launcher
  * deps: jQuery
  * 
- */
+ */  
  
 if (window.jQuery) {  
     $(document).ready(function(){
