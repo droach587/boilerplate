@@ -5,3 +5,4 @@ sass-cache
 Gemfile.lock
 node_modules
 .DS_STORE
+css/styles.css.map

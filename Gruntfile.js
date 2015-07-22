@@ -40,7 +40,8 @@ module.exports = function(grunt) {
                     imagesPath: "img",
                     generatedImagesDir: 'img',
                     fontsPath: "css/fonts",
-                    require: 'breakpoint'
+                    require: 'breakpoint',
+                    sourcemap: true
                 }
             }
         },
@@ -80,7 +81,7 @@ module.exports = function(grunt) {
                 tasks: ['imagemin']
             },
             styles: {
-                files: ['sass/styles.scss'],
+                files: ['sass/**/*.scss'],
                 tasks: ['compass']
             }
         }
@@ -102,5 +103,5 @@ module.exports = function(grunt) {
      *
      * 
      */
-    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'watch']);
+    grunt.registerTask('default', ['compass', 'concat', 'uglify', 'imagemin', 'watch']);
 };
