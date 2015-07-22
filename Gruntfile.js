@@ -1,15 +1,22 @@
 module.exports = function(grunt) {
-    // 1. All configuration goes here 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        /**
+         * Concat JS Files
+         * Contat all files into one
+         * 
+         */
         concat: {
             dist: {
-                src: ['js/*.js', // All JS in the folder
-                'js/global.js' // This specific file
-                ],
+                src: ['js/*.js'],
                 dest: 'js/build/app.js',
             }
         },
+        /**
+         * Uglify
+         * Minifies JS files for production
+         * 
+         */
         uglify: {
             build: {
                 src: 'js/build/app.js',
@@ -19,9 +26,14 @@ module.exports = function(grunt) {
                 }
             }
         },
-        compass: { // Task
-            dist: { // Target
-                options: { // Target options
+        /**
+         * Compass settings, watches with grunt command
+         *
+         * 
+         */
+        compass: { 
+            dist: {
+                options: { 
                     sassDir: 'sass',
                     cssDir: 'css',
                     outputStyle: 'compressed',
@@ -32,6 +44,11 @@ module.exports = function(grunt) {
                 }
             }
         },
+        /**
+         * Image Optimization
+         *
+         * 
+         */
         imagemin: {
             dynamic: {
                 files: [{
@@ -48,6 +65,11 @@ module.exports = function(grunt) {
                 }
             }
         },
+        /**
+         * Grunt Watch Command
+         * @ grun on cli
+         * 
+         */
         watch: {
             scripts: {
                 files: ['js/*.js'],
@@ -63,12 +85,22 @@ module.exports = function(grunt) {
             }
         }
     });
-    // 3. Where we tell Grunt we plan to use this plug-in.
+    
+    /**
+     * Load NPM Tasks
+     *
+     * 
+     */
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
+    
+    /**
+     * Register Grunt Tasks
+     *
+     * 
+     */
     grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'watch']);
 };
