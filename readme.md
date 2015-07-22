@@ -15,3 +15,10 @@ This is a simple boilerplate using foundation 5, modular scss, grunt and compass
  5. Once complete, install node dependencies `(npm install`)
  6. From there, simply execute `grunt` in your working directory, and all css, javascript and images will build and output.
 
+**Notes:**
+
+Images are generated on the fly, dump all assets into the source directory for output into img
+
+If you don't want to auto optimize images, simply add them to the /img directory
+
+compass and all JS are minified on build  
