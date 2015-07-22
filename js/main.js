@@ -1,6 +1,10 @@
 var mainJs = (function () {
  		
- 		// Avoid `console` errors in browsers that lack a console.
+ 		/**
+ 		 * Avoid Console Errors
+ 		 *
+ 		 * 
+ 		 */
 		(function() {
 		    var method;
 		    var noop = function () {};
@@ -24,15 +28,21 @@ var mainJs = (function () {
 		}());
  		
  		
+ 		/**
+ 		 * Simple Init Function
+ 		 *
+ 		 * 
+ 		 */
         function init() {
-            //Init Here
             console.log('init pass');
         }
  
  
-        // Reveal public pointers to
-        // private functions and properties
- 
+        /**
+         * Reveal All Methods here
+         *
+         * 
+         */
         return {
             init 	:	init
         };
