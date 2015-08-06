@@ -6,3 +6,13 @@ Gemfile.lock
 node_modules
 .DS_STORE
 css/styles.css.map
+
+
+source/.sass-cache
+source/sass-cache
+source/.sass-cache/*
+source/.sass-cache*
+source/Gemfile.lock
+source/node_modules
+source/.DS_STORE
+source/css/styles.css.map
