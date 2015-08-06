@@ -115,6 +115,22 @@ module.exports = function(grunt) {
                 dest: '/public_html/build-test',
             }
         },
+        'string-replace': {
+            dist: {
+                files: {
+                    'build/': 'build/**'
+                },
+                options: {
+                    replacements: [{
+                        pattern: /(@timestamp)/ig,
+                        replacement: '<%= grunt.template.today("mmddyyyyhMMss") %>'
+                    }, {
+                        pattern: ',',
+                        replacement: ';'
+                    }]
+                }
+            }
+        },
         /**
          * Grunt Watch Command
          * @ grun on cli
@@ -135,7 +151,7 @@ module.exports = function(grunt) {
             },
             copy: {
                 files: ['source/**'],
-                tasks: ['copy']
+                tasks: ['copy', 'string-replace']
             }
         }
     });
@@ -152,10 +168,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-ftp-deploy');
     grunt.loadNpmTasks('grunt-bower-concat');
+    grunt.loadNpmTasks('grunt-string-replace');
     /**
      * Register Grunt Tasks
      *
      *
      */
-    grunt.registerTask('default', ['compass', 'concat', 'uglify', 'imagemin', 'copy', 'ftp-deploy', 'bower-concat', 'watch']);
+    grunt.registerTask('default', ['compass', 'concat', 'uglify', 'imagemin', 'copy', 'ftp-deploy', 'bower-concat', 'string-replace', 'watch']);
 };
