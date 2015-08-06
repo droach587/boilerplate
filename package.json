@@ -15,9 +15,6 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-deploy": "^0.1.7",
     "grunt-ftp-deploy": "^0.1.10",
-    "grunt-replace": "^0.9.3",
-    "grunt-rev": "^0.1.0",
-    "grunt-string-replace": "^1.2.0",
-    "grunt-usemin": "^3.0.0"
+    "grunt-string-replace": "^1.2.0"
   }
 }
