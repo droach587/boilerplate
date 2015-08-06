@@ -6,6 +6,7 @@ Gemfile.lock
 node_modules
 .DS_STORE
 css/styles.css.map
+build/*
 
 
 source/.sass-cache
