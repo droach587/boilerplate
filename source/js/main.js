@@ -26,7 +26,7 @@ var mainJs = (function () {
 		        }
 		    }
 		}());
- 		
+
  		
  		/**
  		 * Simple Init Function
