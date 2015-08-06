@@ -80,7 +80,7 @@ module.exports = function(grunt) {
 				{
 					expand: true,
 					cwd: 'source',
-					src: ['*', 'js/build/app.min.js', 'js/vendor-non-build/**', 'img/*', 'css/**', '!js/vendor-build', '!.sass-cache', '!img/source'],
+					src: ['*', 'js/build/app.min.js', 'js/vendor-non-build/**', 'img/*', 'css/**', '!Gemfile', '!js/vendor-build', '!.sass-cache', '!img/source'],
 					filter: 'isFile',
 					dest: 'build/'
 				}],
