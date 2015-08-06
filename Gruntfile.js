@@ -34,13 +34,13 @@ module.exports = function(grunt) {
 		compass: {
 			dist: {
 				options: {
-					sassDir: 'sass',
-					cssDir: 'css',
+					sassDir: 'source/sass',
+					cssDir: 'source/css',
 					outputStyle: 'compressed',
-					imagesDir: "source/img",
+					imagesDir: "img",
 					imagesPath: "source/img",
-					generatedImagesDir: 'source/img',
-					fontsDir: "source/css/fonts",
+					generatedImagesDir: 'img',
+					fontsDir: "css/fonts",
 					fontsPath: "source/css/fonts",
 					require: 'breakpoint',
 					sourcemap: true
